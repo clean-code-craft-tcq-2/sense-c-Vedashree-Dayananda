@@ -44,10 +44,11 @@ void emailAlerter()
     emailAlertCallCount++;
 }
 
-void ledAlerter();
+void ledAlerter()
 {
     ledAlertCallCount++;
 }
+
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
   //  int number_of_alerts=0,i=0;
