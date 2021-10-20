@@ -39,3 +39,24 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     return s;
 }
+void emailAlerter()
+{
+    emailAlertCallCount++;
+}
+
+void ledAlerter();
+{
+    ledAlertCallCount++;
+}
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
+{
+    int number_of_alerts =0 ;
+    if ( computedStats.max > maxThreshold)
+    {
+        number_of_alerts = sizeof(alerters)/sizeof(alerters[0]);
+        for (i=0;i<number_of_alerts;i++)
+        {
+            alerters[i]();
+        }
+    }
+}
